@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Secret Contacts</string>
+    <string name="title_activity_main">Secret Contacts</string>
+    <string name="title_activity_contact">Contact Editor</string>
+    <string name="no_contacts_msg">There are no contacts. \n Create some.</string>
+    <string name="update">Update</string>
+</resources>
