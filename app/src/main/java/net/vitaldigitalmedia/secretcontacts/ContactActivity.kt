@@ -35,9 +35,6 @@ class ContactActivity : AppCompatActivity() {
     private fun setupViews() {
         rootView = findViewById<View>(R.id.coordinator_layout) as CoordinatorLayout
 
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
-
         nameEditText = findViewById<View>(R.id.name_edit_text) as EditText
         numberEditText = findViewById<View>(R.id.number_edit_text) as EditText
 

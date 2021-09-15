@@ -63,8 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
+//        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
+//        setSupportActionBar(toolbar)
 
         recyclerView = findViewById<View>(R.id.recycler_view) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
