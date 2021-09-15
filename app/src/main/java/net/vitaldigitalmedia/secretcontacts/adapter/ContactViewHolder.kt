@@ -3,8 +3,8 @@ package net.vitaldigitalmedia.secretcontacts.adapter
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import net.vitaldigitalmedia.secretcontacts.R
 import net.vitaldigitalmedia.secretcontacts.model.Contact
-import secretcontacts.R
 
 /**
  * A view holder that represent the contact. 3 fields are:

@@ -6,11 +6,11 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 31
     defaultConfig {
-        applicationId "com.weightwatchers.ww_exercise_02"
+        applicationId "net.vitaldigitalmedia.secretcontacts"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -47,6 +47,10 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "org.koin:koin-android:2.1.5"
+    implementation "org.koin:koin-androidx-viewmodel:2.1.5"
 }
 repositories {
     mavenCentral()
