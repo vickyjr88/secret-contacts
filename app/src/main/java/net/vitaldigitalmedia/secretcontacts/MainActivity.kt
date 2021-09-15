@@ -1,5 +1,6 @@
 package net.vitaldigitalmedia.secretcontacts
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -87,6 +88,12 @@ class MainActivity : AppCompatActivity() {
                     mainViewModel.createContact(contact)
                 }
             }
+        }
+    }
+
+    companion object {
+        fun createIntent(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
         }
     }
 
