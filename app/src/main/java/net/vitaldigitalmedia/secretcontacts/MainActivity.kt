@@ -15,7 +15,6 @@ import net.vitaldigitalmedia.secretcontacts.adapter.ContactAdapter
 import net.vitaldigitalmedia.secretcontacts.data.AppDatabase
 import net.vitaldigitalmedia.secretcontacts.model.Contact
 import net.vitaldigitalmedia.secretcontacts.viewmodel.MainViewModel
-import secretcontacts.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var noContactsMsg: RelativeLayout

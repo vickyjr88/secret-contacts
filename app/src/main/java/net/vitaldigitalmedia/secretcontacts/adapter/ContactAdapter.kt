@@ -3,8 +3,8 @@ package net.vitaldigitalmedia.secretcontacts.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import net.vitaldigitalmedia.secretcontacts.R
 import net.vitaldigitalmedia.secretcontacts.model.Contact
-import secretcontacts.R
 import java.util.*
 
 class ContactAdapter(

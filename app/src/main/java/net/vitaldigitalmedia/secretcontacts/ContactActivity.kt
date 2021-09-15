@@ -11,7 +11,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.snackbar.Snackbar
 import net.vitaldigitalmedia.secretcontacts.model.Contact
-import secretcontacts.R
 
 class ContactActivity : AppCompatActivity() {
     private var contact: Contact? = null
