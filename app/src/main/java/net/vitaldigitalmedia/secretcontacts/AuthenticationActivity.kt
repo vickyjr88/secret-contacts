@@ -2,7 +2,6 @@ package net.vitaldigitalmedia.secretcontacts
 
 
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
@@ -26,10 +25,13 @@ class AuthenticationActivity : AppCompatActivity() {
 
         binding.apply {
             pinpad.viewProvider = pinview
-            pinpad.callback = object: PinpadView.Callback {
+            pinpad.callback = object : PinpadView.Callback {
                 override fun onPasscodeComplete(passcode: String) {
-                    Toast.makeText(applicationContext, "You typed $passcode", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, "You typed $passcode", Toast.LENGTH_LONG)
+                        .show()
+                    startMainActivity()
                 }
+
                 override fun onHelpRequest() {
                     Toast.makeText(applicationContext, "Help is coming", Toast.LENGTH_LONG).show()
                 }

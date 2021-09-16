@@ -30,11 +30,7 @@
         <activity
             android:name=".AuthenticationActivity"
             android:exported="true"
-            android:label="@string/title_activity_main"/>
-        <activity
-            android:name=".ContactActivity"
-            android:exported="true"
-            android:label="@string/title_activity_contact"
+            android:label="@string/login"
             android:theme="@style/Theme.SecretContact" />
     </application>
 

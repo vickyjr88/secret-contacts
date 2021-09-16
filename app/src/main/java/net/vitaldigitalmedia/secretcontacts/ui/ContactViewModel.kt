@@ -1,4 +1,4 @@
-package net.vitaldigitalmedia.secretcontacts.viewmodel
+package net.vitaldigitalmedia.secretcontacts.ui
 
 import android.app.Application
 import androidx.lifecycle.LiveData
@@ -8,7 +8,7 @@ import net.vitaldigitalmedia.secretcontacts.data.ContactDao
 import net.vitaldigitalmedia.secretcontacts.model.Contact
 
 
-class MainViewModel(private val application: Application) : ViewModel() {
+class ContactViewModel(private val application: Application) : ViewModel() {
 
     private var contactDao: ContactDao
     private lateinit var currentList: List<Contact>
