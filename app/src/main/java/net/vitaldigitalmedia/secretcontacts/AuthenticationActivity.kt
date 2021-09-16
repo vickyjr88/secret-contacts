@@ -2,21 +2,43 @@ package net.vitaldigitalmedia.secretcontacts
 
 
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import com.hextremelabs.pinpad.PinpadView
+import net.vitaldigitalmedia.secretcontacts.databinding.ActivityAuthenticationBinding
 import java.util.concurrent.Executor
 
 class AuthenticationActivity : AppCompatActivity() {
     private lateinit var executor: Executor
     private lateinit var biometricPrompt: BiometricPrompt
     private lateinit var promptInfo: BiometricPrompt.PromptInfo
+    private lateinit var binding: ActivityAuthenticationBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_authentication)
+        binding = ActivityAuthenticationBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        binding.apply {
+            pinpad.viewProvider = pinview
+            pinpad.callback = object : PinpadView.Callback {
+                override fun onPasscodeComplete(passcode: String) {
+                    Toast.makeText(applicationContext, "You typed $passcode", Toast.LENGTH_LONG)
+                        .show()
+                    startMainActivity()
+                }
+
+                override fun onHelpRequest() {
+                    Toast.makeText(applicationContext, "Help is coming", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+
         executor = ContextCompat.getMainExecutor(this)
         biometricPrompt = BiometricPrompt(this, executor,
             object : BiometricPrompt.AuthenticationCallback() {
@@ -62,9 +84,7 @@ class AuthenticationActivity : AppCompatActivity() {
         // Prompt appears when user clicks "Log in".
         // Consider integrating with the keystore to unlock cryptographic operations,
         // if needed by your app.
-        val biometricLoginButton =
-            findViewById<Button>(R.id.biometric_login)
-        biometricLoginButton.setOnClickListener {
+        binding.biometricLogin.setOnClickListener {
             biometricPrompt.authenticate(promptInfo)
         }
     }
