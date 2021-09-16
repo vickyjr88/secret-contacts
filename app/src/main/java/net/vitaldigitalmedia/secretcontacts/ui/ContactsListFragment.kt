@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import net.vitaldigitalmedia.secretcontacts.ContactActivity
 import net.vitaldigitalmedia.secretcontacts.adapter.ContactAdapter
 import net.vitaldigitalmedia.secretcontacts.databinding.FragmentContactsListBinding
 import net.vitaldigitalmedia.secretcontacts.model.Contact
@@ -40,9 +40,12 @@ class ContactsListFragment : Fragment() {
         contactAdapter =
             ContactAdapter(::onContactItemClickListener, ::onContactItemLongClickListener)
 
-        viewModel.updatedData.observe(requireActivity(), {
+        /*viewModel.updatedData.observe(requireActivity(), {
             displayContacts(it)
-        })
+        })*/
+        Thread {
+            displayContacts(viewModel.currentData)
+        }.start()
 
         setupViews()
     }
@@ -60,7 +63,11 @@ class ContactsListFragment : Fragment() {
     }
 
     private fun onContactItemLongClickListener(contact: Contact): Boolean {
-        startActivityForResult(ContactActivity.createIntent(requireContext(), contact), 101)
+        findNavController().navigate(
+            ContactsListFragmentDirections.actionContactsListFragmentToAddContactFragment(
+                contact
+            )
+        )
         return true
     }
 
@@ -76,7 +83,11 @@ class ContactsListFragment : Fragment() {
             recyclerView.adapter = contactAdapter
 
             addContactButton.setOnClickListener {
-                startActivityForResult(ContactActivity.createIntent(requireContext(), null), 101)
+                findNavController().navigate(
+                    ContactsListFragmentDirections.actionContactsListFragmentToAddContactFragment(
+                        Contact()
+                    )
+                )
             }
         }
     }

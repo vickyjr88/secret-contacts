@@ -13,9 +13,9 @@ import java.util.regex.Pattern
 data class Contact(
         @PrimaryKey(autoGenerate = true)
         val id: Int? = null,
-        var name: String,
+        var name: String = "",
         @ColumnInfo(name = "phone_number")
-        var phoneNumber: String
+        var phoneNumber: String = ""
 ) : Parcelable {
 
     companion object {
