@@ -1,7 +1,6 @@
 package net.vitaldigitalmedia.secretcontacts.viewmodel
 
 import android.app.Application
-import androidx.annotation.NonNull
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import net.vitaldigitalmedia.secretcontacts.data.AppDatabase
@@ -17,8 +16,8 @@ class MainViewModel(private val application: Application) : ViewModel() {
     private var appDataBase: AppDatabase? = null
 
     init {
-            appDataBase = AppDatabase.getAppDataBase(application.applicationContext)
-            contactDao = appDataBase!!.contactDao()
+        appDataBase = AppDatabase.getAppDataBase(application.applicationContext)
+        contactDao = appDataBase!!.contactDao()
     }
 
     val currentData: List<Contact>

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_addContactFragment_to_contactsListFragment"
             app:destination="@id/contactsListFragment" />
+        <argument
+            android:name="contact"
+            app:argType="net.vitaldigitalmedia.secretcontacts.model.Contact" />
     </fragment>
     <fragment
         android:id="@+id/contactViewFragment"
