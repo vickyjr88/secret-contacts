@@ -24,8 +24,8 @@ class AuthenticationActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.apply {
-            pinpad.viewProvider = pinview
-            pinpad.callback = object : PinpadView.Callback {
+            pinPad.viewProvider = pinView
+            pinPad.callback = object : PinpadView.Callback {
                 override fun onPasscodeComplete(passcode: String) {
                     Toast.makeText(applicationContext, "You typed $passcode", Toast.LENGTH_LONG)
                         .show()
