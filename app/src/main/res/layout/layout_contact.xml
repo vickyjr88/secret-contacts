@@ -41,6 +41,7 @@
                 style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/courgette"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toEndOf="@+id/contact_number"
                 app:layout_constraintTop_toTopOf="parent"
