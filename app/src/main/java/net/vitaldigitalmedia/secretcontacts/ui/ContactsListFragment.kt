@@ -82,7 +82,7 @@ class ContactsListFragment : Fragment() {
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.adapter = contactAdapter
 
-            addContactButton.setOnClickListener {
+            addContact.setOnClickListener {
                 findNavController().navigate(
                     ContactsListFragmentDirections.actionContactsListFragmentToAddContactFragment(
                         Contact()

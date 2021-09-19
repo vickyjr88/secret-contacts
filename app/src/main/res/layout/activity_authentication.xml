@@ -6,10 +6,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
         tools:context=".AuthenticationActivity">
 
         <com.hextremelabs.pinpad.PinTextView
-            android:id="@+id/pinview"
+            android:id="@+id/pinView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -18,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.hextremelabs.pinpad.PinpadView
-            android:id="@+id/pinpad"
+            android:id="@+id/pinPad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -26,7 +27,7 @@
             app:keySpacing="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pinview"
+            app:layout_constraintTop_toBottomOf="@+id/pinView"
             app:numDigits="5"
             app:subTextColor="#505050"
             app:subTextSize="12sp"
