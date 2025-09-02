@@ -30,7 +30,7 @@
                 android:layout_margin="2dp"
                 android:background="@color/colorNumListDarkOne"
                 android:gravity="center"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/colorOnPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
